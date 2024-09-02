@@ -1,1 +1,5 @@
 /node_modules
+/cha18/assets/
+!/cha18/assets/*
+.gitignore
+.env
