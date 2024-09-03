@@ -1,11 +1,5 @@
 # Social Network API
 
-
-This project is an API designed for a social media platform, utilizing a NoSQL database (MongoDB) to handle large amounts of unstructured data. The API allows for the creation, retrieval, updating, and deletion of users, thoughts, and reactions, as well as managing user friendships. The application is built using Node.js, Express.js, and Mongoose.
-
-
-# Social Network API
-
 This project is an API designed for a social media platform, utilizing a NoSQL database (MongoDB) to handle large amounts of unstructured data. The API allows for the creation, retrieval, updating, and deletion of users, thoughts, and reactions, as well as managing user friendships. The application is built using Node.js, Express.js, and Mongoose.
 
 
