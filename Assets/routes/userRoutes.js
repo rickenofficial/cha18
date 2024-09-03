@@ -50,7 +50,7 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     try {
         await User.findByIdAndDelete(req.params.id);
-        await Thought.deleteMany({ username: req.params.id }); // BONUS: Remove associated thoughts
+        await Thought.deleteMany({ username: req.params.id }); 
         res.status(204).end();
     } catch (err) {
         res.status(500).json(err);

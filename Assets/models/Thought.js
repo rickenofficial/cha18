@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const reactionSchema = require('./Reaction'); 
+const { Schema } = mongoose;
+const reactionSchema = require('./Reaction'); // Ensure the path is correct
 
+// Define the thought schema
 const thoughtSchema = new Schema({
     thoughtText: {
         type: String,
@@ -12,18 +13,20 @@ const thoughtSchema = new Schema({
     createdAt: {
         type: Date,
         default: Date.now,
-        get: (createdAtVal) => new Date(createdAtVal).toLocaleDateString()
+        get: timestamp => new Date(timestamp).toLocaleDateString() 
     },
     username: {
         type: String,
         required: true
     },
-    reactions: [reactionSchema] 
+    reactions: [reactionSchema]
+}, {
+    toJSON: {
+        getters: true
+    },
+    id: false
 });
 
-// Virtual for reactionCount
-thoughtSchema.virtual('reactionCount').get(function () {
-    return this.reactions.length;
-});
+const Thought = mongoose.model('Thought', thoughtSchema);
 
-module.exports = mongoose.model('Thought', thoughtSchema);
+module.exports = Thought;
